@@ -1,0 +1,691 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="input.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-white text-white font-sans">
+  <!-- Header -->
+  <header
+    class="absolute top-0 left-0 w-full flex items-center justify-between px-8 py-4 bg-transparent backdrop-blur-[10px] z-10">
+    <!-- Logo -->
+    <div class="flex items-center">
+      <img src="./assets/img/logo.png" alt="Logo" class="h-10">
+    </div>
+
+    <!-- Navigation Links -->
+    <nav
+      class="hidden md:flex items-center justify-between w-[448px] h-[64px] px-8 gap-[40px] rounded-lg border  border-[rgba(255, 255, 255, 0.3)] z-10"
+      style=" background: rgba(102, 102, 102, 0.2);">
+      <a href="#"
+        class="text-[rgba(249,184,7,1)] hover:text-[rgba(249,184,7,1)] transition duration-300 font-medium">Home</a>
+      <a href="#" class="text-white hover:text-[rgba(249,184,7,1)]  transition duration-300 font-medium">About
+        Us</a>
+      <a href="#" class="text-white hover:text-[rgba(249,184,7,1)]  transition duration-300 font-medium">Team</a>
+      <a href="#" class="text-white hover:text-[rgba(249,184,7,1)]  transition duration-300 font-medium">Contact
+        Us</a>
+    </nav>
+
+    <!-- Contact Button (Hidden on mobile) -->
+    <div
+      class="hidden md:flex items-center justify-center px-8 h-[64px] rounded-full border border--[rgba(255, 255, 255, 0.3)] bg-transparent">
+      <span class="text-[rgba(249,184,7,1)]  text-lg">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M17.4997 13.4765V16.1862C17.5007 16.4377 17.4519 16.6867 17.3566 16.9172C17.2612 17.1477 17.1213 17.3546 16.9459 17.5247C16.7705 17.6947 16.5634 17.8242 16.3379 17.9048C16.1124 17.9854 15.8734 18.0153 15.6364 17.9927C13.0061 17.6907 10.4796 16.7409 8.25981 15.2197C6.19458 13.8329 4.44362 11.9827 3.13128 9.80026C1.68673 7.44389 0.787749 4.76107 0.507182 1.96915C0.485822 1.71938 0.513913 1.46764 0.589666 1.22996C0.665419 0.992289 0.787175 0.773885 0.947181 0.588659C1.10719 0.403433 1.30194 0.255443 1.51903 0.15411C1.73613 0.0527778 1.97081 0.00032375 2.20815 8.75714e-05H4.77241C5.18723 -0.00422671 5.58938 0.151 5.9039 0.436835C6.21843 0.722669 6.42386 1.11961 6.48192 1.55366C6.59015 2.42084 6.79087 3.27229 7.08025 4.09177C7.19525 4.41507 7.22014 4.76642 7.15197 5.1042C7.0838 5.44198 6.92542 5.75203 6.69561 5.99761L5.61007 7.14473C6.82686 9.40604 8.59868 11.2784 10.7386 12.5642L11.8241 11.4171C12.0565 11.1742 12.3499 11.0069 12.6696 10.9348C12.9892 10.8628 13.3217 10.8891 13.6277 11.0106C14.4032 11.3164 15.2089 11.5285 16.0295 11.6429C16.4447 11.7048 16.8239 11.9258 17.095 12.2639C17.3661 12.6019 17.5101 13.0335 17.4997 13.4765Z"
+            fill="#F9B807" />
+        </svg>
+      </span>
+      <a href="tel:01223257745" class="text-white font-medium ml-2">01223 257745</a>
+    </div>
+
+    <!-- Menu Burger -->
+    <button id="burger-button" class="md:hidden text-white">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden absolute top-[80px] left-0 w-full bg-black/80 p-4 rounded-lg space-y-4 md:hidden">
+    <a href="#"
+      class="text-[rgba(249,184,7,1)]  hover:text-[rgba(249,184,7,1)]  transition duration-300 font-medium">Home</a>
+    <a href="#" class="text-white hover:text-[rgba(249,184,7,1)]  transition duration-300 font-medium">About Us</a>
+    <a href="#" class="text-white hover:text-[rgba(249,184,7,1)]  transition duration-300 font-medium">Team</a>
+    <a href="#" class="text-white hover:text-[rgba(249,184,7,1)]  transition duration-300 font-medium">Contact
+      Us</a>
+    <a href="tel:01223257745"
+      class="text-[rgba(249,184,7,1)]  hover:text-yellow-300 transition duration-300 font-medium block mt-4">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M17.4997 13.4765V16.1862C17.5007 16.4377 17.4519 16.6867 17.3566 16.9172C17.2612 17.1477 17.1213 17.3546 16.9459 17.5247C16.7705 17.6947 16.5634 17.8242 16.3379 17.9048C16.1124 17.9854 15.8734 18.0153 15.6364 17.9927C13.0061 17.6907 10.4796 16.7409 8.25981 15.2197C6.19458 13.8329 4.44362 11.9827 3.13128 9.80026C1.68673 7.44389 0.787749 4.76107 0.507182 1.96915C0.485822 1.71938 0.513913 1.46764 0.589666 1.22996C0.665419 0.992289 0.787175 0.773885 0.947181 0.588659C1.10719 0.403433 1.30194 0.255443 1.51903 0.15411C1.73613 0.0527778 1.97081 0.00032375 2.20815 8.75714e-05H4.77241C5.18723 -0.00422671 5.58938 0.151 5.9039 0.436835C6.21843 0.722669 6.42386 1.11961 6.48192 1.55366C6.59015 2.42084 6.79087 3.27229 7.08025 4.09177C7.19525 4.41507 7.22014 4.76642 7.15197 5.1042C7.0838 5.44198 6.92542 5.75203 6.69561 5.99761L5.61007 7.14473C6.82686 9.40604 8.59868 11.2784 10.7386 12.5642L11.8241 11.4171C12.0565 11.1742 12.3499 11.0069 12.6696 10.9348C12.9892 10.8628 13.3217 10.8891 13.6277 11.0106C14.4032 11.3164 15.2089 11.5285 16.0295 11.6429C16.4447 11.7048 16.8239 11.9258 17.095 12.2639C17.3661 12.6019 17.5101 13.0335 17.4997 13.4765Z"
+          fill="#F9B807" />
+      </svg> 01223 257745
+    </a>
+  </div>
+
+
+  <section class="hero-section relative w-full h-[677px] gap-0 ">
+    <div class="absolute w-full h-full">
+      <img src="./assets/img/bg5.jpeg" alt="Background pattern" class="w-full h-full object-cover">
+
+    </div>
+    <div
+      class="absolute w-full max-w-[1304px] h-[330px] left-1/2 transform -translate-x-1/2 top-[332px] flex flex-col items-start gap-[80px] px-4">
+      <div class="flex flex-col items-center gap-[40px]">
+        <div class="flex flex-row items-start gap-[8px] w-full max-w-[1032px] h-[56px]">
+          <span class="text-transparent font-bold text-[6vw] md:text-[80px]"
+            style="-webkit-text-stroke: 1px #F9B807;">Clients</span>
+        </div>
+      </div>
+      <div class="flex justify-center items-center gap-[8px] w-full max-w-[1304px] h-[18px]">
+        <p class="text-[4vw] md:text-[26px] text-white/80 text-center">Bringing Together the Right Talent for Every
+          Role, From the Warehouse Floor to the Office Desk.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="how-we-can-help w-full bg-white py-28 px-6">
+    <div class="max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-24">
+      <!-- Left Column -->
+      <div class="flex-1">
+        <div class="flex flex-col gap-2">
+          <!-- Title -->
+          <h2 class="text-[8vw] lg:text-[60px] font-bold text-[#2E2E2E] leading-[150%]">
+            how we can
+          </h2>
+          <div class="flex items-center gap-2">
+            <h2 class="text-[8vw] lg:text-[60px] font-bold text-[#2E2E2E]">help</h2>
+            <span class="w-3 h-3 bg-[#F9B807] rounded-full"></span>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Right Column -->
+      <div class="flex-1">
+        <p class="text-[4vw] lg:text-[20px] leading-[150%] text-[#585858]">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  
+  <section class="services-section w-full bg-[#F0F0F0] py-[160px] px-4">
+    <div class="max-w-[1440px] mx-auto flex flex-col gap-[96px]">
+      <!-- Header -->
+      <div class="flex justify-between items-center">
+        <div class="flex items-end gap-2">
+          <h2 class="text-[8vw] lg:text-[80px] font-bold text-[#2E2E2E] leading-[150%]">
+            services we provide
+          </h2>
+          <span class="w-[12px] h-[12px] bg-[#F9B807] rounded-full"></span>
+        </div>
+      </div>
+  
+      <!-- Cards Container -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[20px] lg:gap-[40px] px-[16px] md:px-[32px] lg:px-[68px]">
+        <!-- Card Template -->
+        <div class="w-full max-w-[426.67px] mx-auto bg-white rounded-[40px] shadow-lg relative">
+          <div class="bg-[#1E1E1C] h-[290px] p-[24px] lg:p-[40px] flex items-center justify-center rounded-t-[24px] relative">
+            <svg class="absolute top-4 left-4 w-12 h-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+              <g clip-path="url(#clip0_13167_358)">
+                <path d="M16.9882 79.2785H60.2039C69.8306 79.2785 77.1922 71.9168 77.1922 62.2902H65.8667C65.8667 65.6878 63.6015 67.953 60.2039 67.953H16.9882C13.5906 67.953 11.3255 65.6878 11.3255 62.2902V39.6392C11.3255 36.2415 13.5906 33.9765 16.9882 33.9765H60.2039C63.6015 33.9765 65.8667 36.2415 65.8667 39.6392H77.1922C77.1922 30.0126 69.8306 22.651 60.2039 22.651H16.9882C7.36155 22.651 0 30.0126 0 39.6392V62.2902C0 71.9168 7.36155 79.2785 16.9882 79.2785Z" fill="#F0F0F0"/>
+                <path d="M104.612 0H60.2041C50.5774 0 43.2158 7.36163 43.2158 16.9882H54.5413C54.5413 13.5905 56.8064 11.3255 60.2041 11.3255H104.612C108.01 11.3255 110.275 13.5905 110.275 16.9882V39.6392C110.275 43.0368 108.01 45.302 104.612 45.302H60.2041C56.8064 45.302 54.5413 43.0368 54.5413 39.6392H43.2158C43.2158 49.2658 50.5774 56.6275 60.2041 56.6275H104.612C114.239 56.6275 121.6 49.2658 121.6 39.6392V16.9882C121.6 7.36163 114.239 0 104.612 0Z" fill="#F9B807"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_13167_358">
+                  <rect width="128" height="128" fill="white"/>
+                </clipPath>
+              </defs>
+            </svg>
+            <svg class="absolute bottom-0 right-4 w-24 h-24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 191 152" fill="none">
+              <g clip-path="url(#clip0_13167_378)">
+                <path d="M190.666 152H138.503L95.666 108.885L52.6829 152H0.666016L57.1998 95.2924L133.987 95.2924L190.666 152Z" fill="#F5F5F5" fill-opacity="0.1"/>
+                <path d="M190.666 95.2923H133.987L95.666 56.7077L57.1998 95.2923L0.666016 95.2923L95.666 0L190.666 95.2923Z" fill="#F5F5F5" fill-opacity="0.1"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_13167_378">
+                  <rect width="190" height="152" fill="white" transform="translate(0.666016)"/>
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+          <div class="p-[24px] lg:p-[40px] flex flex-col gap-4">
+            <h3 class="text-[20px] lg:text-[28px] font-bold text-[#2E2E2E] mb-4">Permanent</h3>
+            <p class="text-[16px] lg:text-[20px] text-[#7C7C7C] leading-[30px] text-left">
+              We are committed to practicing recruitment responsibly, with respect for the industry and a focus on doing things the right way.
+            </p>
+          </div>
+        </div>
+  
+        <div class="w-full max-w-[426.67px] mx-auto bg-white rounded-[40px] shadow-lg relative">
+            <div class="bg-[#1E1E1C] h-[290px] p-[24px] lg:p-[40px] flex items-center justify-center rounded-t-[24px] relative">
+            
+              <svg class="absolute top-4 left-4 w-12 h-12" viewBox="0 0 81 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_13167_373)">
+                <path d="M80.6663 39.579C80.4979 13.3895 54.8979 -5.72628 29.719 1.51582C4.54002 8.5895 -7.24945 38.4 6.47686 60.7158C27.8663 94.7369 79.319 80.9264 80.6663 40.7579C80.6663 40.5053 80.6663 39.7474 80.6663 39.579ZM71.6558 44.379C70.8979 49.7685 68.7084 54.9053 65.4242 59.2C60.4558 65.6 53.0453 69.8948 44.9611 71.0737C45.4663 64.1685 35.7821 64.1685 36.2874 71.0737C22.7295 69.3053 11.3611 58.0211 9.59265 44.379C16.4979 44.8842 16.4979 35.2 9.59265 35.7053C11.3611 22.1474 22.6453 10.8632 36.2032 9.01056C35.6979 15.9158 45.3821 15.9158 44.8769 9.01056C58.519 10.779 69.8874 22.0632 71.6558 35.7053C64.8348 35.2 64.8348 44.8 71.6558 44.379Z" fill="#F9B807"/>
+                <path d="M51.8663 55.5791C50.6873 55.5791 49.5084 55.0738 48.7505 54.2317L37.8031 43.3686C36.7084 42.358 36.2031 40.9265 36.2873 39.4949V24.0001C36.2873 20.2107 41.0031 18.1896 43.6979 20.8843C44.4558 21.6422 44.961 22.8212 44.961 24.0001V38.2317C49.4242 42.6107 50.5189 43.7896 54.9821 48.1686C57.6768 50.8633 55.74 55.5791 51.8663 55.5791Z" fill="#F0F0F0"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_13167_373">
+                <rect width="80" height="80" fill="white" transform="translate(0.666504)"/>
+                </clipPath>
+                </defs>
+                </svg>
+                
+              <svg class="absolute bottom-0 right-4 w-24 h-24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 191 152" fill="none">
+                <g clip-path="url(#clip0_13167_378)">
+                  <path d="M190.666 152H138.503L95.666 108.885L52.6829 152H0.666016L57.1998 95.2924L133.987 95.2924L190.666 152Z" fill="#F5F5F5" fill-opacity="0.1"/>
+                  <path d="M190.666 95.2923H133.987L95.666 56.7077L57.1998 95.2923L0.666016 95.2923L95.666 0L190.666 95.2923Z" fill="#F5F5F5" fill-opacity="0.1"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0_13167_378">
+                    <rect width="190" height="152" fill="white" transform="translate(0.666016)"/>
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <div class="p-[24px] lg:p-[40px] flex flex-col gap-4">
+              <h3 class="text-[20px] lg:text-[28px] font-bold text-[#2E2E2E] mb-4">Temporary/Contract</h3>
+              <p class="text-[16px] lg:text-[20px] text-[#7C7C7C] leading-[30px] text-left">
+                We are committed to practicing recruitment responsibly, with respect for the industry and a focus on doing things the right way.
+              </p>
+            </div>
+        </div>
+
+        <div class="w-full max-w-[426.67px] mx-auto bg-white rounded-[40px] shadow-lg relative">
+            <div class="bg-[#1E1E1C] h-[290px] p-[24px] lg:p-[40px] flex items-center justify-center rounded-t-[24px] relative">
+              
+
+              <svg class="absolute top-4 left-4 w-12 h-12" viewBox="0 0 101 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_13167_384)">
+                <path d="M74.272 13.0806L67.2886 20.0638C66.6661 20.6862 65.6454 20.7194 65.0209 20.099C60.4461 15.5539 54.2572 13.2814 47.4942 13.2814C32.8845 13.2814 20.9453 25.2348 20.9453 39.8443H26.958C28.412 39.8443 29.1398 41.6024 28.1113 42.6301L15.4444 55.2864C14.8071 55.9232 13.7744 55.923 13.1374 55.2859L0.481154 42.6296C-0.546698 41.6017 0.181276 39.8443 1.63489 39.8443H7.66391C7.66391 28.8975 12.1378 18.9296 19.3655 11.7018C26.5793 4.48767 36.5476 0 47.4942 0C58.184 0 67.6721 4.15671 74.2995 10.7994C74.9255 11.4269 74.8988 12.4538 74.272 13.0806Z" fill="#F9B807"/>
+                <path d="M93.3648 39.8443H87.3521C87.3521 61.7515 69.4153 79.6885 47.4939 79.6885C36.8188 79.6885 27.3201 75.5205 20.7034 68.8899C20.0769 68.2622 20.1042 67.2346 20.7317 66.608L27.7927 59.5579C28.3963 58.9552 29.3731 58.9063 30.0074 59.4766C34.5696 63.5786 40.7513 66.4071 47.4939 66.4071C62.1175 66.4071 74.0707 54.4538 74.0707 39.8443H68.0417C66.5881 39.8443 65.8601 38.0868 66.888 37.0589L79.5442 24.4026C80.1812 23.7656 81.2139 23.7654 81.8512 24.4021L94.5181 37.0584C95.5466 38.0861 94.8188 39.8443 93.3648 39.8443Z" fill="#F0F0F0"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_13167_384">
+                <rect width="100" height="100" fill="white" transform="translate(0.333008)"/>
+                </clipPath>
+                </defs>
+                </svg>
+
+                
+              <svg class="absolute bottom-0 right-4 w-24 h-24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 191 152" fill="none">
+                <g clip-path="url(#clip0_13167_378)">
+                  <path d="M190.666 152H138.503L95.666 108.885L52.6829 152H0.666016L57.1998 95.2924L133.987 95.2924L190.666 152Z" fill="#F5F5F5" fill-opacity="0.1"/>
+                  <path d="M190.666 95.2923H133.987L95.666 56.7077L57.1998 95.2923L0.666016 95.2923L95.666 0L190.666 95.2923Z" fill="#F5F5F5" fill-opacity="0.1"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0_13167_378">
+                    <rect width="190" height="152" fill="white" transform="translate(0.666016)"/>
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <div class="p-[24px] lg:p-[40px] flex flex-col gap-4">
+              <h3 class="text-[20px] lg:text-[28px] font-bold text-[#2E2E2E] mb-4">Retained</h3>
+              <p class="text-[16px] lg:text-[20px] text-[#7C7C7C] leading-[30px] text-left">
+                We are committed to practicing recruitment responsibly, with respect for the industry and a focus on doing things the right way.
+              </p>
+            </div>
+          </div>
+    
+    
+  
+      </div>
+    </div>
+  </section>
+
+
+  <section class="work-method-section w-full bg-white py-[160px]">
+    <div class="max-w-[1440px] mx-auto flex flex-col gap-[112px] px-4">
+      <!-- Header -->
+      <div class="flex flex-col gap-4 px-4">
+        <div class="flex flex-col lg:flex-row items-start lg:items-end justify-between">
+          <div class="flex flex-col">
+            <h2 class="text-[8vw] lg:text-[80px] font-bold text-[#1E1E1C] leading-[150%]">
+              Our Work
+            </h2>
+            <div class="flex items-center gap-2 mt-4">
+              <span class="text-[50px] md:text-[80px] font-bold text-[#1E1E1C] text-transparent px-[40px] py-[5px]"  style="-webkit-text-stroke: 1px #F9B807;">
+                Method
+              </span>
+            </div>
+          </div>
+          <p class="text-[16px] lg:text-[22px] text-[#7C7C7C] max-w-[632px] mt-6 lg:mt-0">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+          </p>
+        </div>
+      </div>
+  
+      <!-- Steps Container -->
+      <div class="relative flex flex-col gap-[112px]">
+        <!-- Vertical Line -->
+        <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-[#F9B807] z-0 lg:block hidden"></div>
+        
+        <!-- Step 1 -->
+        <div class="relative flex flex-col lg:flex-row items-end justify-between gap-8">
+          <!-- Step Number -->
+          <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center bg-[#1E1E1C] text-white font-bold text-[28px] w-[64px] h-[64px] rounded-full  -top-[32px]">
+            1
+          </div>
+          <div class="lg:w-[48%] mt-[96px]">
+            <img 
+              src="./assets/img/work1.png" 
+              alt="Initial Consultation" 
+              class="w-full h-auto rounded-[40px] shadow-md object-cover">
+          </div>
+          <div class="flex flex-col lg:w-[48%] gap-6 mt-[6px]">
+            <h3 class="text-[28px] lg:text-[42px] font-bold text-[#2E2E2E]">
+              Initial Consultation
+            </h3>
+            <p class="text-[16px] lg:text-[20px] leading-[150%] text-[#7C7C7C]">
+              We begin with an in-depth discussion to understand your company’s needs, goals, and the specific roles you’re looking to fill. This helps us identify the ideal candidate profile and craft a recruitment strategy tailored to your business.
+            </p>
+          </div>
+        </div>
+  
+        <!-- Step 2 -->
+        <div class="relative flex flex-col lg:flex-row-reverse items-end justify-between gap-8">
+          <!-- Step Number -->
+          <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center bg-[#1E1E1C] text-white font-bold text-[28px] w-[64px] h-[64px] rounded-full  -top-[32px]">
+            2
+          </div>
+          <div class="lg:w-[48%] mt-[96px]">
+            <img 
+              src="./assets/img/work2.png" 
+              alt="Role Definition & Market Research" 
+              class="w-full h-auto rounded-[40px] shadow-md object-cover">
+          </div>
+          <div class="flex flex-col lg:w-[48%] gap-6 mt-[96px]">
+            <h3 class="text-[28px] lg:text-[42px] font-bold text-[#2E2E2E]">
+              Role Definition & Market Research
+            </h3>
+            <p class="text-[16px] lg:text-[20px] leading-[150%] text-[#7C7C7C]">
+              Our team refines the job description and conducts market research to ensure the role is competitive and appealing. We then identify key channels to source top talent.
+            </p>
+          </div>
+        </div>
+  
+        <!-- Step 3 -->
+        <div class="relative flex flex-col lg:flex-row items-end justify-between gap-8">
+          <!-- Step Number -->
+          <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center bg-[#1E1E1C] text-white font-bold text-[28px] w-[64px] h-[64px] rounded-full  -top-[32px]">
+            3
+          </div>
+          <div class="lg:w-[48%] mt-[96px]">
+            <img 
+              src="./assets/img/work3.png" 
+              alt="Candidate Search & Screening" 
+              class="w-full h-auto rounded-[40px] shadow-md object-cover">
+          </div>
+          <div class="flex flex-col lg:w-[48%] gap-6 mt-[96px]">
+            <h3 class="text-[28px] lg:text-[42px] font-bold text-[#2E2E2E]">
+              Candidate Search & Screening
+            </h3>
+            <p class="text-[16px] lg:text-[20px] leading-[150%] text-[#7C7C7C]">
+              Using our extensive network and recruitment tools, we source highly qualified candidates. We conduct initial screenings, including interviews, skill assessments, and background checks, to shortlist the best fits for your needs.
+            </p>
+          </div>
+        </div>
+  
+          <!-- Step 4 -->
+          <div class="relative flex flex-col lg:flex-row-reverse items-end justify-between gap-8">
+            <!-- Step Number -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center bg-[#1E1E1C] text-white font-bold text-[28px] w-[64px] h-[64px] rounded-full  -top-[32px]">
+              4
+            </div>
+            <div class="lg:w-[48%] mt-[96px]">
+              <img 
+                src="./assets/img/work4.png" 
+                alt="Role Definition & Market Research" 
+                class="w-full h-auto rounded-[40px] shadow-md object-cover">
+            </div>
+            <div class="flex flex-col lg:w-[48%] gap-6 mt-[96px]">
+              <h3 class="text-[28px] lg:text-[42px] font-bold text-[#2E2E2E]">
+                Candidate Presentation
+              </h3>
+              <p class="text-[16px] lg:text-[20px] leading-[150%] text-[#7C7C7C]">
+                We provide a detailed profile of each shortlisted candidate, including their experience, skills, and a summary of why they’re a great match for your company. </p>
+            </div>
+          </div>
+
+           <!-- Step 5 -->
+        <div class="relative flex flex-col lg:flex-row items-end justify-between gap-8">
+            <!-- Step Number -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center bg-[#1E1E1C] text-white font-bold text-[28px] w-[64px] h-[64px] rounded-full  -top-[32px]">
+              5
+            </div>
+            <div class="lg:w-[48%] mt-[96px]">
+              <img 
+                src="./assets/img/work5.png" 
+                alt="Client Interviews" 
+                class="w-full h-auto rounded-[40px] shadow-md object-cover">
+            </div>
+            <div class="flex flex-col lg:w-[48%] gap-6 mt-[96px]">
+              <h3 class="text-[28px] lg:text-[42px] font-bold text-[#2E2E2E]">
+                Client Interviews
+              </h3>
+              <p class="text-[16px] lg:text-[20px] leading-[150%] text-[#7C7C7C]">We coordinate interviews between you and the selected candidates. Our team remains on hand to offer guidance and gather feedback throughout this stage.</p>
+            </div>
+          </div>
+          
+          <!-- Step 6 -->
+          <div class="relative flex flex-col lg:flex-row-reverse items-end justify-between gap-8">
+            <!-- Step Number -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center bg-[#1E1E1C] text-white font-bold text-[28px] w-[64px] h-[64px] rounded-full -top-[32px]">
+              6
+            </div>
+            <div class="lg:w-[48%] mt-[96px]">
+              <img 
+                src="./assets/img/work6.png" 
+                alt="Offer & Negotiation" 
+                class="w-full h-auto rounded-[40px] shadow-md object-cover">
+            </div>
+            <div class="flex flex-col lg:w-[48%] gap-6 mt-[96px]">
+              <h3 class="text-[28px] lg:text-[42px] font-bold text-[#2E2E2E]">
+                Offer & Negotiation
+              </h3>
+              <p class="text-[16px] lg:text-[20px] leading-[150%] text-[#7C7C7C]">
+                Once you’ve chosen your ideal candidate, we assist in extending the offer, negotiating terms, and ensuring a smooth acceptance process. </p>
+            </div>
+          </div>
+          <!-- Step 7 -->
+        <div class="relative flex flex-col lg:flex-row items-end justify-between gap-8">
+            <!-- Step Number -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center bg-[#1E1E1C] text-white font-bold text-[28px] w-[64px] h-[64px] rounded-full  -top-[32px]">
+              7
+            </div>
+            <div class="lg:w-[48%] mt-[96px]">
+              <img 
+                src="./assets/img/work7.png" 
+                alt="Candidate Search & Screening" 
+                class="w-full h-auto rounded-[40px] shadow-md object-cover">
+            </div>
+            <div class="flex flex-col lg:w-[48%] gap-6 mt-[96px]">
+              <h3 class="text-[28px] lg:text-[42px] font-bold text-[#2E2E2E]">
+                Onboarding Support
+              </h3>
+              <p class="text-[16px] lg:text-[20px] leading-[150%] text-[#7C7C7C]">
+                We stay involved even after the hire, offering guidance to both you and the candidate during the onboarding phase to ensure a seamless transition and long-term success.</p>
+            </div>
+        </div>
+
+          <!-- Step 8 -->
+          <div class="relative flex flex-col lg:flex-row-reverse items-end justify-between gap-8">
+            <!-- Step Number -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center bg-[#1E1E1C] text-white font-bold text-[28px] w-[64px] h-[64px] rounded-full  -top-[32px]">
+              8
+            </div>
+            <div class="lg:w-[48%] mt-[96px]">
+              <img 
+                src="./assets/img/work6.png" 
+                alt="Role Definition & Market Research" 
+                class="w-full h-auto rounded-[40px] shadow-md object-cover">
+            </div>
+            <div class="flex flex-col lg:w-[48%] gap-6 mt-[96px]">
+              <h3 class="text-[28px] lg:text-[42px] font-bold text-[#2E2E2E]">
+                Follow-Up
+              </h3>
+              <p class="text-[16px] lg:text-[20px] leading-[150%] text-[#7C7C7C]">
+                Our relationship doesn’t end at placement. We check in periodically to ensure satisfaction and provide ongoing support as needed.
+             </p>
+            </div>
+          </div>
+
+        
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+  
+
+  <section class="footer-section w-full h-auto py-[80px] px-[40px] bg-[#1E1E1C] relative">
+    <div class="flex flex-col lg:flex-row gap-[40px] max-w-[1440px] mx-auto">
+      <!-- Contact Us Section -->
+      <div
+        class="contact-section w-full lg:w-[426.67px] bg-[#2C2C29] rounded-[24px] p-[48px_32px] flex flex-col gap-[40px]">
+        <div class="flex flex-col gap-[40px]">
+          <div class="flex items-end gap-[8px]">
+            <h2 class="text-[36px] font-bold text-white leading-[54px] tracking-[0.02em]">
+              Contact Us
+            </h2>
+            <div class="w-[8px] h-[8px] rounded-full bg-[#F9B807] ml-[-3px] mb-[10px]"></div>
+          </div>
+          <p class="text-[20px] leading-[30px] text-[#D8D8D8]">
+            Let's find the right talent together—fill out the form below, and our team will be in touch
+            shortly!
+          </p>
+        </div>
+        <form class="flex flex-col gap-[32px]">
+          <!-- Name & Email -->
+          <div class="flex flex-col md:flex-row gap-[16px]">
+            <div class="flex flex-col gap-[8px] w-full">
+              <label for="name" class="text-[18px] leading-[27px] text-[#D8D8D8]">Name</label>
+              <input type="text" id="name" name="name"
+                class="w-full h-[54px] bg-[rgba(217,217,217,0.08)] rounded-[12px] px-[16px] text-white">
+            </div>
+            <div class="flex flex-col gap-[8px] w-full">
+              <label for="email" class="text-[18px] leading-[27px] text-[#D8D8D8]">Email</label>
+              <input type="email" id="email" name="email"
+                class="w-full h-[54px] bg-[rgba(217,217,217,0.08)] rounded-[12px] px-[16px] text-white">
+            </div>
+          </div>
+          <!-- Phone -->
+          <div class="flex flex-col gap-[8px]">
+            <label for="phone" class="text-[18px] leading-[27px] text-[#D8D8D8]">Phone</label>
+            <input type="tel" id="phone" name="phone"
+              class="w-full h-[54px] bg-[rgba(217,217,217,0.08)] rounded-[12px] px-[16px] text-white">
+          </div>
+          <!-- Message -->
+          <div class="flex flex-col gap-[8px]">
+            <label for="message" class="text-[18px] leading-[27px] text-[#D8D8D8]">Message</label>
+            <textarea id="message" name="message" rows="4"
+              class="w-full h-[117px] bg-[rgba(217,217,217,0.08)] rounded-[12px] px-[16px] py-[8px] text-white resize-none"></textarea>
+          </div>
+          <!-- Submit Button -->
+          <button type="submit"
+            class="w-[130px] h-[64px] bg-[#1E1E1C] rounded-[32px] text-[#F9B807] font-bold text-[20px] leading-[30px]">
+            Submit
+          </button>
+        </form>
+      </div>
+
+      <!-- Come Visit Us Section -->
+      <div
+        class="visit-section w-full lg:w-[426.67px] bg-[#2C2C29] rounded-[24px] p-[64px_32px_32px] flex flex-col gap-[56px]">
+        <div class="flex flex-col gap-[40px]">
+          <div class="flex items-end gap-[8px]">
+            <h2 class=" text-[30px] md:text-[36px]  font-bold text-white leading-[54px] tracking-[0.02em]">
+              Come Visit Us
+            </h2>
+            <div class="w-[8px] h-[8px] rounded-full bg-[#F9B807] ml-[-3px] mb-[10px]"></div>
+          </div>
+          <p class="text-[20px] leading-[30px] text-[#D8D8D8]">
+            We'd love to welcome you in person!
+          </p>
+        </div>
+        <!-- Location Tabs -->
+        <div class="flex flex-wrap gap-[32px]">
+          <span
+            class="px-[16px] py-[8px] bg-[#1E1E1C] rounded-[25px] text-[#F9B807] font-bold text-[16px] leading-[24px]">
+            NEWMARKET
+          </span>
+          <span class="px-[16px] py-[8px] bg-transparent text-[#DDDDDB] font-bold text-[16px] leading-[24px]">
+            HAVERHILL
+          </span>
+          <span class="px-[16px] py-[8px] bg-transparent text-[#DDDDDB] font-bold text-[16px] leading-[24px]">
+            CAMBRIDGE
+          </span>
+          <span class="px-[16px] py-[8px] bg-transparent text-[#DDDDDB] font-bold text-[16px] leading-[24px]">
+            BURY ST EDMUNDS
+          </span>
+        </div>
+        <!-- Contact Details -->
+        <div class="bg-[rgba(217,217,217,0.08)] rounded-[12px] p-[32px_24px] flex flex-col gap-[24px]">
+          <div class="flex items-start gap-[16px]">
+            <svg width="19" height="26" viewBox="0 0 19 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M9.66663 0.240234C4.71663 0.240234 0.666626 4.61523 0.666626 9.96246C0.666626 15.1708 8.83091 24.6152 9.21663 25.0319C9.3452 25.1708 9.53805 25.2402 9.66663 25.2402C9.85948 25.2402 9.98805 25.1708 10.1166 25.0319C10.5023 24.6152 18.6666 15.1708 18.6666 9.96246C18.6666 4.61523 14.6166 0.240234 9.66663 0.240234ZM9.66663 14.7541C7.22377 14.7541 5.23091 12.6013 5.23091 9.96246C5.23091 7.32357 7.22377 5.17079 9.66663 5.17079C12.1095 5.17079 14.1023 7.32357 14.1023 9.96246C14.1023 12.6013 12.1095 14.7541 9.66663 14.7541Z"
+                fill="#F9B807" />
+            </svg>
+
+            <p class="text-[11px] md:text-[18px] leading-[27px] text-[#F5F5F5]">
+              Crem Recruitment Ltd<br>
+              1 Black Bear Lane<br>
+              Newmarket<br>
+              Suffolk<br>
+              CB8 0JT
+            </p>
+          </div>
+          <div class="flex items-center gap-[16px]">
+            <svg width="19" height="26" viewBox="0 0 23 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M10.0105 9.18532C10.5251 9.57558 11.1726 9.78837 11.8405 9.78679C12.5084 9.78521 13.1547 9.56935 13.6671 9.17666L22.5807 2.12948C22.3019 1.66188 21.8913 1.27139 21.3919 0.998706C20.8924 0.72602 20.3223 0.581118 19.7409 0.579102H3.92547C3.34402 0.581113 2.77382 0.726098 2.27432 0.998936C1.77483 1.27177 1.36435 1.66247 1.08569 2.13027L10.0105 9.18532Z"
+                fill="#F9B807" />
+              <path
+                d="M14.7787 10.3771C13.9552 11.0099 12.9153 11.3574 11.8406 11.359C10.766 11.3606 9.72485 11.0161 8.89905 10.3857L0.666626 3.87793V14.9141C0.667989 15.706 1.01178 16.4651 1.62266 17.0251C2.23353 17.585 3.06167 17.9002 3.92558 17.9014H19.741C20.605 17.9002 21.4331 17.585 22.044 17.0251C22.6548 16.4651 22.9986 15.706 23 14.9141V3.87793L14.7787 10.3771Z"
+                fill="#F9B807" />
+            </svg>
+
+            <p class="text-[11px] md:text-[18px] leading-[27px] text-[#F5F5F5]">
+              newmarket@cremrecruitment.co.uk
+            </p>
+          </div>
+          <div class="flex items-center gap-[16px]">
+            <svg width="19" height="26" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M21.4224 20.3948L20.4105 21.4953C19.1028 22.9568 17.2034 23.5587 15.3976 23.0772C13.5761 22.5356 11.848 21.6844 10.2679 20.541C8.80448 19.5093 7.45005 18.297 6.22018 16.9386C5.09149 15.7006 4.07957 14.3422 3.19997 12.8892C2.23475 11.3245 1.47192 9.6136 0.927035 7.81674C0.304312 5.70176 0.818058 3.38045 2.2581 1.82431L3.44128 0.517502C3.76821 0.147812 4.30531 0.147812 4.63223 0.517502L8.36857 4.64428C8.6955 5.00537 8.70328 5.59859 8.36857 5.95969L6.17347 8.38417C5.54297 9.07196 5.46513 10.1638 5.98666 10.9548C6.78063 12.1584 7.66022 13.2847 8.60988 14.3336C9.6685 15.5115 10.8283 16.5861 12.066 17.5404C12.7821 18.0907 13.7473 17.9961 14.3623 17.3169L16.4795 14.944C16.8065 14.5829 17.3436 14.5743 17.6705 14.944L21.4146 19.0794C21.7493 19.4405 21.7493 20.0337 21.4224 20.3948Z"
+                fill="#F9B807" />
+            </svg>
+
+            <p class="text-[11px] md:text-[18px] leading-[27px] text-[#F5F5F5]">
+              01638 661789
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Section -->
+      <div class=" lg:flex w-full lg:w-[426.67px]  rounded-[24px] justify-center items-center bg-cover bg-center"
+        style="background-image: url('./assets/img/bg.png');">
+        <img src="./assets/img/logo.png" alt="Crem Recruitment Logo" class="w-[272px] h-[133px]">
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-section w-full h-auto py-[64px] px-[20px] md:px-[40px] lg:px-[68px] bg-[#1E1E1C] relative">
+    <div class="flex flex-col gap-[40px] max-w-[1440px] mx-auto">
+      <!-- Top Row with Logo and Menu -->
+      <div class="flex flex-col md:flex-row items-center gap-[20px] md:gap-[42px] justify-between w-full">
+        <!-- Logo Section -->
+        <div class="flex flex-col items-start gap-[6.57px]">
+          <img src="./assets/img/logo.png" alt="Company Logo" class="w-[100px] h-[49px] md:w-[125px] md:h-[61px]">
+          <!-- Menu Section -->
+          <nav class="flex flex-col md:flex-row items-start gap-[20px] md:gap-[40px] mt-[16px]">
+            <a href="#" class="text-[16px] md:text-[18px] leading-[24px] md:leading-[27px] text-[#F0F0F0]">Home</a>
+            <a href="#" class="text-[16px] md:text-[18px] leading-[24px] md:leading-[27px] text-[#F0F0F0]">About
+              Us</a>
+            <a href="#" class="text-[16px] md:text-[18px] leading-[24px] md:leading-[27px] text-[#F0F0F0]">Team</a>
+            <a href="#" class="text-[16px] md:text-[18px] leading-[24px] md:leading-[27px] text-[#F0F0F0]">Contact
+              Us</a>
+          </nav>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="flex flex-row items-center gap-[16px] md:gap-[24px] mt-[20px] md:mt-0">
+          <a href="#" aria-label="LinkedIn" class="w-[16px] h-[16px] md:w-[18.17px] md:h-[18.17px]">
+            <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_13092_192)">
+                <path
+                  d="M15.9999 0.240234H2.78246C2.12518 0.240234 1.49483 0.501336 1.03007 0.9661C0.565301 1.43086 0.304199 2.06122 0.304199 2.7185L0.304199 15.9359C0.304199 16.5932 0.565301 17.2235 1.03007 17.6883C1.49483 18.153 2.12518 18.4141 2.78246 18.4141H15.9999C16.6571 18.4141 17.2875 18.153 17.7522 17.6883C18.217 17.2235 18.4781 16.5932 18.4781 15.9359V2.7185C18.4781 2.06122 18.217 1.43086 17.7522 0.9661C17.2875 0.501336 16.6571 0.240234 15.9999 0.240234ZM6.49985 14.6224C6.49999 14.6728 6.49018 14.7227 6.47099 14.7693C6.4518 14.8159 6.4236 14.8583 6.38801 14.894C6.35242 14.9297 6.31014 14.958 6.2636 14.9773C6.21705 14.9966 6.16715 15.0065 6.11675 15.0065H4.4842C4.43372 15.0067 4.3837 14.9968 4.33704 14.9776C4.29037 14.9583 4.24797 14.93 4.21227 14.8943C4.17658 14.8586 4.14829 14.8162 4.12903 14.7696C4.10978 14.7229 4.09993 14.6729 4.10007 14.6224V7.77828C4.10007 7.6764 4.14054 7.5787 4.21258 7.50666C4.28462 7.43462 4.38232 7.39415 4.4842 7.39415H6.11675C6.21845 7.39442 6.31589 7.43501 6.38771 7.50702C6.45952 7.57903 6.49985 7.67658 6.49985 7.77828V14.6224ZM5.29996 6.74567C4.99361 6.74567 4.69415 6.65483 4.43943 6.48463C4.18471 6.31443 3.98618 6.07253 3.86895 5.7895C3.75172 5.50647 3.72104 5.19504 3.78081 4.89458C3.84057 4.59412 3.98809 4.31813 4.20471 4.10151C4.42133 3.88489 4.69732 3.73737 4.99778 3.67761C5.29824 3.61784 5.60968 3.64851 5.8927 3.76575C6.17573 3.88298 6.41764 4.08151 6.58783 4.33623C6.75803 4.59094 6.84887 4.89041 6.84887 5.19676C6.84887 5.60755 6.68569 6.00153 6.39521 6.292C6.10473 6.58248 5.71076 6.74567 5.29996 6.74567ZM15.0333 14.6493C15.0335 14.6957 15.0244 14.7417 15.0067 14.7846C14.989 14.8275 14.963 14.8665 14.9302 14.8993C14.8974 14.9321 14.8584 14.9581 14.8155 14.9758C14.7726 14.9935 14.7266 15.0025 14.6802 15.0024H12.9247C12.8783 15.0025 12.8323 14.9935 12.7894 14.9758C12.7465 14.9581 12.7075 14.9321 12.6747 14.8993C12.6419 14.8665 12.6159 14.8275 12.5982 14.7846C12.5805 14.7417 12.5715 14.6957 12.5716 14.6493V11.443C12.5716 10.9639 12.712 9.34475 11.319 9.34475C10.24 9.34475 10.02 10.4527 9.97665 10.9505V14.6534C9.97666 14.7462 9.94016 14.8352 9.87504 14.9013C9.80993 14.9674 9.72142 15.0052 9.62866 15.0065H7.93311C7.88678 15.0065 7.84091 14.9974 7.79812 14.9796C7.75534 14.9619 7.71647 14.9358 7.68376 14.903C7.65105 14.8702 7.62513 14.8313 7.6075 14.7885C7.58986 14.7456 7.58086 14.6997 7.58099 14.6534V7.74833C7.58086 7.702 7.58986 7.65611 7.6075 7.61327C7.62513 7.57042 7.65105 7.53149 7.68376 7.49868C7.71647 7.46587 7.75534 7.43984 7.79812 7.42208C7.84091 7.40432 7.88678 7.39518 7.93311 7.39518H9.62866C9.72232 7.39518 9.81214 7.43239 9.87837 7.49862C9.9446 7.56485 9.98181 7.65467 9.98181 7.74833V8.34518C10.3825 7.74317 10.9762 7.28056 12.2432 7.28056C15.0499 7.28056 15.0313 9.90132 15.0313 11.3408L15.0333 14.6493Z"
+                  fill="#F0F0F0" />
+              </g>
+              <defs>
+                <clipPath id="clip0_13092_192">
+                  <rect width="18.1739" height="18.1739" fill="white" transform="translate(0.304199 0.240234)" />
+                </clipPath>
+              </defs>
+            </svg>
+          </a>
+          <a href="#" aria-label="Twitter" class="w-[16px] h-[16px] md:w-[18.17px] md:h-[18.17px]">
+            <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M11.2567 7.93565L17.8769 0.240234H16.3081L10.5598 6.92205L5.96868 0.240234H0.67334L7.61605 10.3443L0.67334 18.4141H2.2422L8.31254 11.3579L13.1611 18.4141H18.4565L11.2563 7.93565H11.2567ZM9.10795 10.4333L8.40451 9.42721L2.80748 1.42124H5.21715L9.73402 7.88231L10.4375 8.88845L16.3089 17.2868H13.8992L9.10795 10.4337V10.4333Z"
+                fill="#F0F0F0" />
+            </svg>
+          </a>
+          <a href="#" aria-label="Facebook" class="w-[16px] h-[16px] md:w-[18.17px] md:h-[18.17px]">
+            <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M16.1638 0.240234H3.31429C1.84648 0.240234 0.6521 1.43462 0.6521 2.90243V15.752C0.6521 17.2198 1.84648 18.4141 3.31429 18.4141H8.67418V11.9894H6.54442V8.79475H8.67418V6.6295C8.67418 4.86788 10.1072 3.43487 11.8688 3.43487H15.0989V6.6295H11.8688V8.79475H15.0989L14.5665 11.9894H11.8688V18.4141H16.1638C17.6316 18.4141 18.826 17.2198 18.826 15.752V2.90243C18.826 1.43462 17.6316 0.240234 16.1638 0.240234Z"
+                fill="#F0F0F0" />
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="w-[16px] h-[16px] md:w-[18.17px] md:h-[18.17px]">
+            <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_13092_200)">
+                <path
+                  d="M18.9819 5.58341C18.9393 4.61776 18.7831 3.95389 18.5594 3.37863C18.3287 2.76801 17.9736 2.22132 17.5085 1.76686C17.054 1.30532 16.5037 0.946686 15.9002 0.719523C15.3216 0.495827 14.6612 0.33967 13.6956 0.297094C12.7227 0.250913 12.4138 0.240234 9.9464 0.240234C7.47895 0.240234 7.1701 0.250913 6.20085 0.293489C5.2352 0.336064 4.57132 0.49236 3.9962 0.715917C3.38544 0.946686 2.83875 1.30171 2.38429 1.76686C1.92275 2.22132 1.56426 2.77162 1.33695 3.37516C1.11326 3.95389 0.957102 4.61416 0.914526 5.57981C0.868345 6.55267 0.857666 6.86152 0.857666 9.32897C0.857666 11.7964 0.868345 12.1053 0.91092 13.0745C0.953496 14.0402 1.10979 14.704 1.33349 15.2793C1.56426 15.8899 1.92275 16.4366 2.38429 16.8911C2.83875 17.3526 3.38905 17.7112 3.9926 17.9384C4.57132 18.1621 5.23159 18.3183 6.19738 18.3608C7.1665 18.4036 7.47548 18.4141 9.94293 18.4141C12.4104 18.4141 12.7192 18.4036 13.6885 18.3608C14.6541 18.3183 15.318 18.1621 15.8931 17.9384C17.1145 17.4662 18.0802 16.5005 18.5524 15.2793C18.7759 14.7006 18.9322 14.0402 18.9748 13.0745C19.0174 12.1053 19.0281 11.7964 19.0281 9.32897C19.0281 6.86152 19.0245 6.55267 18.9819 5.58341ZM17.3453 13.0035C17.3062 13.8911 17.1571 14.3704 17.0328 14.6899C16.7274 15.4816 16.0991 16.11 15.3073 16.4154C14.9878 16.5397 14.505 16.6887 13.6209 16.7277C12.6624 16.7704 12.3749 16.781 9.95 16.781C7.52513 16.781 7.23404 16.7704 6.27892 16.7277C5.39135 16.6887 4.91206 16.5397 4.59254 16.4154C4.19854 16.2698 3.83991 16.039 3.54881 15.7372C3.24704 15.4425 3.01627 15.0875 2.87065 14.6935C2.74639 14.374 2.59731 13.8911 2.55834 13.0071C2.51562 12.0485 2.50508 11.7609 2.50508 9.33604C2.50508 6.91117 2.51562 6.62007 2.55834 5.6651C2.59731 4.77753 2.74639 4.29824 2.87065 3.97871C3.01627 3.58458 3.24704 3.22608 3.55242 2.93485C3.84698 2.63307 4.20201 2.4023 4.59614 2.25682C4.91567 2.13256 5.39856 1.98348 6.28253 1.94437C7.24111 1.9018 7.52874 1.89112 9.95347 1.89112C12.3819 1.89112 12.6694 1.9018 13.6245 1.94437C14.5121 1.98348 14.9914 2.13256 15.3109 2.25682C15.7049 2.4023 16.0636 2.63307 16.3547 2.93485C16.6564 3.22955 16.8872 3.58458 17.0328 3.97871C17.1571 4.29824 17.3062 4.78099 17.3453 5.6651C17.3879 6.62368 17.3985 6.91117 17.3985 9.33604C17.3985 11.7609 17.3879 12.0449 17.3453 13.0035Z"
+                  fill="#F0F0F0" />
+                <path
+                  d="M9.94646 4.66016C7.36903 4.66016 5.27783 6.75122 5.27783 9.32878C5.27783 11.9063 7.36903 13.9974 9.94646 13.9974C12.524 13.9974 14.6151 11.9063 14.6151 9.32878C14.6151 6.75122 12.524 4.66016 9.94646 4.66016ZM9.94646 12.3572C8.27436 12.3572 6.91804 11.001 6.91804 9.32878C6.91804 7.65654 8.27436 6.30036 9.94646 6.30036C11.6187 6.30036 12.9749 7.65654 12.9749 9.32878C12.9749 11.001 11.6187 12.3572 9.94646 12.3572Z"
+                  fill="#F0F0F0" />
+                <path
+                  d="M15.8897 4.47565C15.8897 5.07754 15.4016 5.56556 14.7996 5.56556C14.1977 5.56556 13.7097 5.07754 13.7097 4.47565C13.7097 3.87363 14.1977 3.38574 14.7996 3.38574C15.4016 3.38574 15.8897 3.87363 15.8897 4.47565Z"
+                  fill="#F0F0F0" />
+              </g>
+              <defs>
+                <clipPath id="clip0_13092_200">
+                  <rect width="18.1739" height="18.1739" fill="white" transform="translate(0.825928 0.240234)" />
+                </clipPath>
+              </defs>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Row with Copyright and Links -->
+      <div
+        class="flex flex-col md:flex-row justify-between items-center md:items-end w-full py-[24px] gap-[16px] md:gap-0">
+        <!-- Copyright Notice -->
+        <p class="text-[14px] md:text-[16px] leading-[21px] md:leading-[24px] text-[#B8B8B8]">
+          &copy; 2024 Company name. All rights reserved.
+        </p>
+
+        <!-- Links -->
+        <div class="flex flex-col md:flex-row gap-[16px] md:gap-[40px]">
+          <a href="#" class="text-[14px] md:text-[16px] leading-[21px] md:leading-[24px] text-[#B8B8B8]">Privacy
+            Policy</a>
+          <a href="#" class="text-[14px] md:text-[16px] leading-[21px] md:leading-[24px] text-[#B8B8B8]">Terms
+            and Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
