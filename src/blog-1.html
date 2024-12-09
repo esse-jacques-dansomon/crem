@@ -1,0 +1,381 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="input.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="bg-white text-white font-sans">
+    <!-- Header -->
+    <header
+      class="absolute top-0 left-0 w-full flex items-center justify-between px-8 py-4 bg-transparent backdrop-blur-[10px] z-10">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <img src="./assets/img/logo.png" alt="Logo" class="h-10">
+      </div>
+  
+      <!-- Navigation Links -->
+      <nav
+        class="hidden md:flex items-center justify-between w-[448px] h-[64px] px-8 gap-[40px] rounded-lg border  border-[rgba(255, 255, 255, 0.3)] z-10"
+        style=" background: rgba(102, 102, 102, 0.2);">
+        <a href="#"
+          class="text-[rgba(249,184,7,1)] hover:text-[rgba(249,184,7,1)] transition duration-300 font-medium">Home</a>
+        <a href="#" class="text-white hover:text-[rgba(249,184,7,1)]  transition duration-300 font-medium">About
+          Us</a>
+        <a href="#" class="text-white hover:text-[rgba(249,184,7,1)]  transition duration-300 font-medium">Team</a>
+        <a href="#" class="text-white hover:text-[rgba(249,184,7,1)]  transition duration-300 font-medium">Contact
+          Us</a>
+      </nav>
+  
+      <!-- Contact Button (Hidden on mobile) -->
+      <div
+        class="hidden md:flex items-center justify-center px-8 h-[64px] rounded-full border border--[rgba(255, 255, 255, 0.3)] bg-transparent">
+        <span class="text-[rgba(249,184,7,1)]  text-lg">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M17.4997 13.4765V16.1862C17.5007 16.4377 17.4519 16.6867 17.3566 16.9172C17.2612 17.1477 17.1213 17.3546 16.9459 17.5247C16.7705 17.6947 16.5634 17.8242 16.3379 17.9048C16.1124 17.9854 15.8734 18.0153 15.6364 17.9927C13.0061 17.6907 10.4796 16.7409 8.25981 15.2197C6.19458 13.8329 4.44362 11.9827 3.13128 9.80026C1.68673 7.44389 0.787749 4.76107 0.507182 1.96915C0.485822 1.71938 0.513913 1.46764 0.589666 1.22996C0.665419 0.992289 0.787175 0.773885 0.947181 0.588659C1.10719 0.403433 1.30194 0.255443 1.51903 0.15411C1.73613 0.0527778 1.97081 0.00032375 2.20815 8.75714e-05H4.77241C5.18723 -0.00422671 5.58938 0.151 5.9039 0.436835C6.21843 0.722669 6.42386 1.11961 6.48192 1.55366C6.59015 2.42084 6.79087 3.27229 7.08025 4.09177C7.19525 4.41507 7.22014 4.76642 7.15197 5.1042C7.0838 5.44198 6.92542 5.75203 6.69561 5.99761L5.61007 7.14473C6.82686 9.40604 8.59868 11.2784 10.7386 12.5642L11.8241 11.4171C12.0565 11.1742 12.3499 11.0069 12.6696 10.9348C12.9892 10.8628 13.3217 10.8891 13.6277 11.0106C14.4032 11.3164 15.2089 11.5285 16.0295 11.6429C16.4447 11.7048 16.8239 11.9258 17.095 12.2639C17.3661 12.6019 17.5101 13.0335 17.4997 13.4765Z"
+              fill="#F9B807" />
+          </svg>
+        </span>
+        <a href="tel:01223257745" class="text-white font-medium ml-2">01223 257745</a>
+      </div>
+  
+      <!-- Menu Burger -->
+      <button id="burger-button" class="md:hidden text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </header>
+  
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden absolute top-[80px] left-0 w-full bg-black/80 p-4 rounded-lg space-y-4 md:hidden">
+      <a href="#"
+        class="text-[rgba(249,184,7,1)]  hover:text-[rgba(249,184,7,1)]  transition duration-300 font-medium">Home</a>
+      <a href="#" class="text-white hover:text-[rgba(249,184,7,1)]  transition duration-300 font-medium">About Us</a>
+      <a href="#" class="text-white hover:text-[rgba(249,184,7,1)]  transition duration-300 font-medium">Team</a>
+      <a href="#" class="text-white hover:text-[rgba(249,184,7,1)]  transition duration-300 font-medium">Contact
+        Us</a>
+      <a href="tel:01223257745"
+        class="text-[rgba(249,184,7,1)]  hover:text-yellow-300 transition duration-300 font-medium block mt-4">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M17.4997 13.4765V16.1862C17.5007 16.4377 17.4519 16.6867 17.3566 16.9172C17.2612 17.1477 17.1213 17.3546 16.9459 17.5247C16.7705 17.6947 16.5634 17.8242 16.3379 17.9048C16.1124 17.9854 15.8734 18.0153 15.6364 17.9927C13.0061 17.6907 10.4796 16.7409 8.25981 15.2197C6.19458 13.8329 4.44362 11.9827 3.13128 9.80026C1.68673 7.44389 0.787749 4.76107 0.507182 1.96915C0.485822 1.71938 0.513913 1.46764 0.589666 1.22996C0.665419 0.992289 0.787175 0.773885 0.947181 0.588659C1.10719 0.403433 1.30194 0.255443 1.51903 0.15411C1.73613 0.0527778 1.97081 0.00032375 2.20815 8.75714e-05H4.77241C5.18723 -0.00422671 5.58938 0.151 5.9039 0.436835C6.21843 0.722669 6.42386 1.11961 6.48192 1.55366C6.59015 2.42084 6.79087 3.27229 7.08025 4.09177C7.19525 4.41507 7.22014 4.76642 7.15197 5.1042C7.0838 5.44198 6.92542 5.75203 6.69561 5.99761L5.61007 7.14473C6.82686 9.40604 8.59868 11.2784 10.7386 12.5642L11.8241 11.4171C12.0565 11.1742 12.3499 11.0069 12.6696 10.9348C12.9892 10.8628 13.3217 10.8891 13.6277 11.0106C14.4032 11.3164 15.2089 11.5285 16.0295 11.6429C16.4447 11.7048 16.8239 11.9258 17.095 12.2639C17.3661 12.6019 17.5101 13.0335 17.4997 13.4765Z"
+            fill="#F9B807" />
+        </svg> 01223 257745
+      </a>
+    </div>
+  
+  
+    <section class="hero-section relative w-full h-[677px] gap-0 ">
+      <div class="absolute w-full h-full">
+        <img src="./assets/img/bg5.jpeg" alt="Background pattern" class="w-full h-full object-cover">
+  
+      </div>
+      <div
+        class="absolute w-full max-w-[1304px] h-[330px] left-1/2 transform -translate-x-1/2 top-[332px] flex flex-col items-start gap-[80px] px-4">
+        <div class="flex flex-col items-center gap-[40px]">
+          <div class="flex flex-row items-start gap-[8px] w-full max-w-[1032px] h-[56px]">
+            <span class="text-transparent font-bold text-[6vw] md:text-[80px]"
+              style="-webkit-text-stroke: 1px #F9B807;">Blog</span>
+          </div>
+        </div>
+        <div class="flex justify-center items-center gap-[8px] w-full max-w-[1304px] h-[18px]">
+          <p class="text-[4vw] md:text-[26px] text-white/80 text-center">Bringing Together the Right Talent for Every
+            Role, From the Warehouse Floor to the Office Desk.</p>
+        </div>
+      </div>
+    </section>
+
+
+   
+    <section class="flex flex-col items-end p-10 md:p-20 gap-28 w-full bg-white">
+      <!-- Articles Container -->
+      <div class="flex flex-col items-start gap-20 w-full max-w-[1360px]">
+        <!-- Article Row 1 -->
+        <div class="flex flex-col md:flex-row items-start md:items-center gap-10 w-full rounded-2xl">
+          <!-- Article Card -->
+          <div class="flex flex-col md:flex-row w-full bg-white rounded-[40px] overflow-hidden">
+            <img src="./assets/img/blogimg.png" alt="Article Image" class="w-full md:w-[40%] h-[200px] md:h-auto rounded-[40px]object-cover">
+            <div class="p-6 md:p-12 flex flex-col justify-center w-full">
+              <p class="text-sm md:text-base text-gray-500">10 November 2024</p>
+              <h3 class="text-lg md:text-2xl font-bold text-gray-900 leading-tight mt-2">Top Recruitment Trends to Watch in 2024</h3>
+              <p class="text-sm md:text-base text-gray-600 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum...</p>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Article Row 2 -->
+        <div class="flex flex-col md:flex-row items-start md:items-center gap-10 w-full rounded-[40px]">
+          <!-- Article Card -->
+          <div class="flex flex-col md:flex-row w-full bg-white  overflow-hidden">
+            <img src="./assets/img/blogimg.png" alt="Article Image" class="w-full md:w-[40%] h-[200px] md:h-auto rounded-[40px] object-cover">
+            <div class="p-6 md:p-12 flex flex-col justify-center w-full">
+              <p class="text-sm md:text-base text-gray-500">10 November 2024</p>
+              <h3 class="text-lg md:text-2xl font-bold text-gray-900 leading-tight mt-2">Top Recruitment Trends to Watch in 2024</h3>
+              <p class="text-sm md:text-base text-gray-600 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum...</p>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Article Row 3 -->
+        <div class="flex flex-col md:flex-row items-start md:items-center gap-10 w-full rounded-2xl">
+          <!-- Article Card -->
+          <div class="flex flex-col md:flex-row w-full bg-white rounded-2xl overflow-hidden">
+            <img src="./assets/img/blogimg.png" alt="Article Image" class="w-full md:w-[40%] h-[200px] md:h-auto rounded-[40px] object-cover">
+            <div class="p-6 md:p-12 flex flex-col justify-center w-full">
+              <p class="text-sm md:text-base text-gray-500">10 November 2024</p>
+              <h3 class="text-lg md:text-2xl font-bold text-gray-900 leading-tight mt-2">Top Recruitment Trends to Watch in 2024</h3>
+              <p class="text-sm md:text-base text-gray-600 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Pagination -->
+      <div class="flex justify-center items-center gap-4">
+        <button class="w-12 h-12 flex items-center justify-center bg-yellow-500 text-black font-bold rounded-full">1</button>
+        <button class="w-12 h-12 flex items-center justify-center border border-yellow-500 text-yellow-500 font-bold rounded-full">2</button>
+        <span class="w-12 h-12 flex items-center justify-center text-gray-500">...</span>
+        <button class="w-12 h-12 flex items-center justify-center border border-yellow-500 text-yellow-500 font-bold rounded-full">6</button>
+      </div>
+    </section>
+    
+
+
+    
+   
+
+
+
+
+    <section class="footer-section w-full h-auto py-[80px] px-[40px] bg-[#1E1E1C] relative">
+        <div class="flex flex-col lg:flex-row gap-[40px] max-w-[1440px] mx-auto">
+          <!-- Contact Us Section -->
+          <div
+            class="contact-section w-full lg:w-[426.67px] bg-[#2C2C29] rounded-[24px] p-[48px_32px] flex flex-col gap-[40px]">
+            <div class="flex flex-col gap-[40px]">
+              <div class="flex items-end gap-[8px]">
+                <h2 class="text-[36px] font-bold text-white leading-[54px] tracking-[0.02em]">
+                  Contact Us
+                </h2>
+                <div class="w-[8px] h-[8px] rounded-full bg-[#F9B807] ml-[-3px] mb-[10px]"></div>
+              </div>
+              <p class="text-[20px] leading-[30px] text-[#D8D8D8]">
+                Let's find the right talent together—fill out the form below, and our team will be in touch
+                shortly!
+              </p>
+            </div>
+            <form class="flex flex-col gap-[32px]">
+              <!-- Name & Email -->
+              <div class="flex flex-col md:flex-row gap-[16px]">
+                <div class="flex flex-col gap-[8px] w-full">
+                  <label for="name" class="text-[18px] leading-[27px] text-[#D8D8D8]">Name</label>
+                  <input type="text" id="name" name="name"
+                    class="w-full h-[54px] bg-[rgba(217,217,217,0.08)] rounded-[12px] px-[16px] text-white">
+                </div>
+                <div class="flex flex-col gap-[8px] w-full">
+                  <label for="email" class="text-[18px] leading-[27px] text-[#D8D8D8]">Email</label>
+                  <input type="email" id="email" name="email"
+                    class="w-full h-[54px] bg-[rgba(217,217,217,0.08)] rounded-[12px] px-[16px] text-white">
+                </div>
+              </div>
+              <!-- Phone -->
+              <div class="flex flex-col gap-[8px]">
+                <label for="phone" class="text-[18px] leading-[27px] text-[#D8D8D8]">Phone</label>
+                <input type="tel" id="phone" name="phone"
+                  class="w-full h-[54px] bg-[rgba(217,217,217,0.08)] rounded-[12px] px-[16px] text-white">
+              </div>
+              <!-- Message -->
+              <div class="flex flex-col gap-[8px]">
+                <label for="message" class="text-[18px] leading-[27px] text-[#D8D8D8]">Message</label>
+                <textarea id="message" name="message" rows="4"
+                  class="w-full h-[117px] bg-[rgba(217,217,217,0.08)] rounded-[12px] px-[16px] py-[8px] text-white resize-none"></textarea>
+              </div>
+              <!-- Submit Button -->
+              <button type="submit"
+                class="w-[130px] h-[64px] bg-[#1E1E1C] rounded-[32px] text-[#F9B807] font-bold text-[20px] leading-[30px]">
+                Submit
+              </button>
+            </form>
+          </div>
+    
+          <!-- Come Visit Us Section -->
+          <div
+            class="visit-section w-full lg:w-[426.67px] bg-[#2C2C29] rounded-[24px] p-[64px_32px_32px] flex flex-col gap-[56px]">
+            <div class="flex flex-col gap-[40px]">
+              <div class="flex items-end gap-[8px]">
+                <h2 class=" text-[30px] md:text-[36px]  font-bold text-white leading-[54px] tracking-[0.02em]">
+                  Come Visit Us
+                </h2>
+                <div class="w-[8px] h-[8px] rounded-full bg-[#F9B807] ml-[-3px] mb-[10px]"></div>
+              </div>
+              <p class="text-[20px] leading-[30px] text-[#D8D8D8]">
+                We'd love to welcome you in person!
+              </p>
+            </div>
+            <!-- Location Tabs -->
+            <div class="flex flex-wrap gap-[32px]">
+              <span
+                class="px-[16px] py-[8px] bg-[#1E1E1C] rounded-[25px] text-[#F9B807] font-bold text-[16px] leading-[24px]">
+                NEWMARKET
+              </span>
+              <span class="px-[16px] py-[8px] bg-transparent text-[#DDDDDB] font-bold text-[16px] leading-[24px]">
+                HAVERHILL
+              </span>
+              <span class="px-[16px] py-[8px] bg-transparent text-[#DDDDDB] font-bold text-[16px] leading-[24px]">
+                CAMBRIDGE
+              </span>
+              <span class="px-[16px] py-[8px] bg-transparent text-[#DDDDDB] font-bold text-[16px] leading-[24px]">
+                BURY ST EDMUNDS
+              </span>
+            </div>
+            <!-- Contact Details -->
+            <div class="bg-[rgba(217,217,217,0.08)] rounded-[12px] p-[32px_24px] flex flex-col gap-[24px]">
+              <div class="flex items-start gap-[16px]">
+                <svg width="19" height="26" viewBox="0 0 19 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M9.66663 0.240234C4.71663 0.240234 0.666626 4.61523 0.666626 9.96246C0.666626 15.1708 8.83091 24.6152 9.21663 25.0319C9.3452 25.1708 9.53805 25.2402 9.66663 25.2402C9.85948 25.2402 9.98805 25.1708 10.1166 25.0319C10.5023 24.6152 18.6666 15.1708 18.6666 9.96246C18.6666 4.61523 14.6166 0.240234 9.66663 0.240234ZM9.66663 14.7541C7.22377 14.7541 5.23091 12.6013 5.23091 9.96246C5.23091 7.32357 7.22377 5.17079 9.66663 5.17079C12.1095 5.17079 14.1023 7.32357 14.1023 9.96246C14.1023 12.6013 12.1095 14.7541 9.66663 14.7541Z"
+                    fill="#F9B807" />
+                </svg>
+    
+                <p class="text-[11px] md:text-[18px] leading-[27px] text-[#F5F5F5]">
+                  Crem Recruitment Ltd<br>
+                  1 Black Bear Lane<br>
+                  Newmarket<br>
+                  Suffolk<br>
+                  CB8 0JT
+                </p>
+              </div>
+              <div class="flex items-center gap-[16px]">
+                <svg width="19" height="26" viewBox="0 0 23 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M10.0105 9.18532C10.5251 9.57558 11.1726 9.78837 11.8405 9.78679C12.5084 9.78521 13.1547 9.56935 13.6671 9.17666L22.5807 2.12948C22.3019 1.66188 21.8913 1.27139 21.3919 0.998706C20.8924 0.72602 20.3223 0.581118 19.7409 0.579102H3.92547C3.34402 0.581113 2.77382 0.726098 2.27432 0.998936C1.77483 1.27177 1.36435 1.66247 1.08569 2.13027L10.0105 9.18532Z"
+                    fill="#F9B807" />
+                  <path
+                    d="M14.7787 10.3771C13.9552 11.0099 12.9153 11.3574 11.8406 11.359C10.766 11.3606 9.72485 11.0161 8.89905 10.3857L0.666626 3.87793V14.9141C0.667989 15.706 1.01178 16.4651 1.62266 17.0251C2.23353 17.585 3.06167 17.9002 3.92558 17.9014H19.741C20.605 17.9002 21.4331 17.585 22.044 17.0251C22.6548 16.4651 22.9986 15.706 23 14.9141V3.87793L14.7787 10.3771Z"
+                    fill="#F9B807" />
+                </svg>
+    
+                <p class="text-[11px] md:text-[18px] leading-[27px] text-[#F5F5F5]">
+                  newmarket@cremrecruitment.co.uk
+                </p>
+              </div>
+              <div class="flex items-center gap-[16px]">
+                <svg width="19" height="26" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M21.4224 20.3948L20.4105 21.4953C19.1028 22.9568 17.2034 23.5587 15.3976 23.0772C13.5761 22.5356 11.848 21.6844 10.2679 20.541C8.80448 19.5093 7.45005 18.297 6.22018 16.9386C5.09149 15.7006 4.07957 14.3422 3.19997 12.8892C2.23475 11.3245 1.47192 9.6136 0.927035 7.81674C0.304312 5.70176 0.818058 3.38045 2.2581 1.82431L3.44128 0.517502C3.76821 0.147812 4.30531 0.147812 4.63223 0.517502L8.36857 4.64428C8.6955 5.00537 8.70328 5.59859 8.36857 5.95969L6.17347 8.38417C5.54297 9.07196 5.46513 10.1638 5.98666 10.9548C6.78063 12.1584 7.66022 13.2847 8.60988 14.3336C9.6685 15.5115 10.8283 16.5861 12.066 17.5404C12.7821 18.0907 13.7473 17.9961 14.3623 17.3169L16.4795 14.944C16.8065 14.5829 17.3436 14.5743 17.6705 14.944L21.4146 19.0794C21.7493 19.4405 21.7493 20.0337 21.4224 20.3948Z"
+                    fill="#F9B807" />
+                </svg>
+    
+                <p class="text-[11px] md:text-[18px] leading-[27px] text-[#F5F5F5]">
+                  01638 661789
+                </p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Image Section -->
+          <div class=" lg:flex w-full lg:w-[426.67px]  rounded-[24px] justify-center items-center bg-cover bg-center"
+            style="background-image: url('./assets/img/bg.png');">
+            <img src="./assets/img/logo.png" alt="Crem Recruitment Logo" class="w-[272px] h-[133px]">
+          </div>
+        </div>
+      </section>
+    
+
+      <footer class="footer-section w-full h-auto py-[64px] px-[20px] md:px-[40px] lg:px-[68px] bg-[#1E1E1C] relative">
+        <div class="flex flex-col gap-[40px] max-w-[1440px] mx-auto">
+          <!-- Top Row with Logo and Menu -->
+          <div class="flex flex-col md:flex-row items-center gap-[20px] md:gap-[42px] justify-between w-full">
+            <!-- Logo Section -->
+            <div class="flex flex-col items-start gap-[6.57px]">
+              <img src="./assets/img/logo.png" alt="Company Logo" class="w-[100px] h-[49px] md:w-[125px] md:h-[61px]">
+              <!-- Menu Section -->
+              <nav class="flex flex-col md:flex-row items-start gap-[20px] md:gap-[40px] mt-[16px]">
+                <a href="#" class="text-[16px] md:text-[18px] leading-[24px] md:leading-[27px] text-[#F0F0F0]">Home</a>
+                <a href="#" class="text-[16px] md:text-[18px] leading-[24px] md:leading-[27px] text-[#F0F0F0]">About
+                  Us</a>
+                <a href="#" class="text-[16px] md:text-[18px] leading-[24px] md:leading-[27px] text-[#F0F0F0]">Team</a>
+                <a href="#" class="text-[16px] md:text-[18px] leading-[24px] md:leading-[27px] text-[#F0F0F0]">Contact
+                  Us</a>
+              </nav>
+            </div>
+    
+            <!-- Social Media Icons -->
+            <div class="flex flex-row items-center gap-[16px] md:gap-[24px] mt-[20px] md:mt-0">
+              <a href="#" aria-label="LinkedIn" class="w-[16px] h-[16px] md:w-[18.17px] md:h-[18.17px]">
+                <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_13092_192)">
+                    <path
+                      d="M15.9999 0.240234H2.78246C2.12518 0.240234 1.49483 0.501336 1.03007 0.9661C0.565301 1.43086 0.304199 2.06122 0.304199 2.7185L0.304199 15.9359C0.304199 16.5932 0.565301 17.2235 1.03007 17.6883C1.49483 18.153 2.12518 18.4141 2.78246 18.4141H15.9999C16.6571 18.4141 17.2875 18.153 17.7522 17.6883C18.217 17.2235 18.4781 16.5932 18.4781 15.9359V2.7185C18.4781 2.06122 18.217 1.43086 17.7522 0.9661C17.2875 0.501336 16.6571 0.240234 15.9999 0.240234ZM6.49985 14.6224C6.49999 14.6728 6.49018 14.7227 6.47099 14.7693C6.4518 14.8159 6.4236 14.8583 6.38801 14.894C6.35242 14.9297 6.31014 14.958 6.2636 14.9773C6.21705 14.9966 6.16715 15.0065 6.11675 15.0065H4.4842C4.43372 15.0067 4.3837 14.9968 4.33704 14.9776C4.29037 14.9583 4.24797 14.93 4.21227 14.8943C4.17658 14.8586 4.14829 14.8162 4.12903 14.7696C4.10978 14.7229 4.09993 14.6729 4.10007 14.6224V7.77828C4.10007 7.6764 4.14054 7.5787 4.21258 7.50666C4.28462 7.43462 4.38232 7.39415 4.4842 7.39415H6.11675C6.21845 7.39442 6.31589 7.43501 6.38771 7.50702C6.45952 7.57903 6.49985 7.67658 6.49985 7.77828V14.6224ZM5.29996 6.74567C4.99361 6.74567 4.69415 6.65483 4.43943 6.48463C4.18471 6.31443 3.98618 6.07253 3.86895 5.7895C3.75172 5.50647 3.72104 5.19504 3.78081 4.89458C3.84057 4.59412 3.98809 4.31813 4.20471 4.10151C4.42133 3.88489 4.69732 3.73737 4.99778 3.67761C5.29824 3.61784 5.60968 3.64851 5.8927 3.76575C6.17573 3.88298 6.41764 4.08151 6.58783 4.33623C6.75803 4.59094 6.84887 4.89041 6.84887 5.19676C6.84887 5.60755 6.68569 6.00153 6.39521 6.292C6.10473 6.58248 5.71076 6.74567 5.29996 6.74567ZM15.0333 14.6493C15.0335 14.6957 15.0244 14.7417 15.0067 14.7846C14.989 14.8275 14.963 14.8665 14.9302 14.8993C14.8974 14.9321 14.8584 14.9581 14.8155 14.9758C14.7726 14.9935 14.7266 15.0025 14.6802 15.0024H12.9247C12.8783 15.0025 12.8323 14.9935 12.7894 14.9758C12.7465 14.9581 12.7075 14.9321 12.6747 14.8993C12.6419 14.8665 12.6159 14.8275 12.5982 14.7846C12.5805 14.7417 12.5715 14.6957 12.5716 14.6493V11.443C12.5716 10.9639 12.712 9.34475 11.319 9.34475C10.24 9.34475 10.02 10.4527 9.97665 10.9505V14.6534C9.97666 14.7462 9.94016 14.8352 9.87504 14.9013C9.80993 14.9674 9.72142 15.0052 9.62866 15.0065H7.93311C7.88678 15.0065 7.84091 14.9974 7.79812 14.9796C7.75534 14.9619 7.71647 14.9358 7.68376 14.903C7.65105 14.8702 7.62513 14.8313 7.6075 14.7885C7.58986 14.7456 7.58086 14.6997 7.58099 14.6534V7.74833C7.58086 7.702 7.58986 7.65611 7.6075 7.61327C7.62513 7.57042 7.65105 7.53149 7.68376 7.49868C7.71647 7.46587 7.75534 7.43984 7.79812 7.42208C7.84091 7.40432 7.88678 7.39518 7.93311 7.39518H9.62866C9.72232 7.39518 9.81214 7.43239 9.87837 7.49862C9.9446 7.56485 9.98181 7.65467 9.98181 7.74833V8.34518C10.3825 7.74317 10.9762 7.28056 12.2432 7.28056C15.0499 7.28056 15.0313 9.90132 15.0313 11.3408L15.0333 14.6493Z"
+                      fill="#F0F0F0" />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_13092_192">
+                      <rect width="18.1739" height="18.1739" fill="white" transform="translate(0.304199 0.240234)" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+              <a href="#" aria-label="Twitter" class="w-[16px] h-[16px] md:w-[18.17px] md:h-[18.17px]">
+                <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M11.2567 7.93565L17.8769 0.240234H16.3081L10.5598 6.92205L5.96868 0.240234H0.67334L7.61605 10.3443L0.67334 18.4141H2.2422L8.31254 11.3579L13.1611 18.4141H18.4565L11.2563 7.93565H11.2567ZM9.10795 10.4333L8.40451 9.42721L2.80748 1.42124H5.21715L9.73402 7.88231L10.4375 8.88845L16.3089 17.2868H13.8992L9.10795 10.4337V10.4333Z"
+                    fill="#F0F0F0" />
+                </svg>
+              </a>
+              <a href="#" aria-label="Facebook" class="w-[16px] h-[16px] md:w-[18.17px] md:h-[18.17px]">
+                <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M16.1638 0.240234H3.31429C1.84648 0.240234 0.6521 1.43462 0.6521 2.90243V15.752C0.6521 17.2198 1.84648 18.4141 3.31429 18.4141H8.67418V11.9894H6.54442V8.79475H8.67418V6.6295C8.67418 4.86788 10.1072 3.43487 11.8688 3.43487H15.0989V6.6295H11.8688V8.79475H15.0989L14.5665 11.9894H11.8688V18.4141H16.1638C17.6316 18.4141 18.826 17.2198 18.826 15.752V2.90243C18.826 1.43462 17.6316 0.240234 16.1638 0.240234Z"
+                    fill="#F0F0F0" />
+                </svg>
+              </a>
+              <a href="#" aria-label="Instagram" class="w-[16px] h-[16px] md:w-[18.17px] md:h-[18.17px]">
+                <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_13092_200)">
+                    <path
+                      d="M18.9819 5.58341C18.9393 4.61776 18.7831 3.95389 18.5594 3.37863C18.3287 2.76801 17.9736 2.22132 17.5085 1.76686C17.054 1.30532 16.5037 0.946686 15.9002 0.719523C15.3216 0.495827 14.6612 0.33967 13.6956 0.297094C12.7227 0.250913 12.4138 0.240234 9.9464 0.240234C7.47895 0.240234 7.1701 0.250913 6.20085 0.293489C5.2352 0.336064 4.57132 0.49236 3.9962 0.715917C3.38544 0.946686 2.83875 1.30171 2.38429 1.76686C1.92275 2.22132 1.56426 2.77162 1.33695 3.37516C1.11326 3.95389 0.957102 4.61416 0.914526 5.57981C0.868345 6.55267 0.857666 6.86152 0.857666 9.32897C0.857666 11.7964 0.868345 12.1053 0.91092 13.0745C0.953496 14.0402 1.10979 14.704 1.33349 15.2793C1.56426 15.8899 1.92275 16.4366 2.38429 16.8911C2.83875 17.3526 3.38905 17.7112 3.9926 17.9384C4.57132 18.1621 5.23159 18.3183 6.19738 18.3608C7.1665 18.4036 7.47548 18.4141 9.94293 18.4141C12.4104 18.4141 12.7192 18.4036 13.6885 18.3608C14.6541 18.3183 15.318 18.1621 15.8931 17.9384C17.1145 17.4662 18.0802 16.5005 18.5524 15.2793C18.7759 14.7006 18.9322 14.0402 18.9748 13.0745C19.0174 12.1053 19.0281 11.7964 19.0281 9.32897C19.0281 6.86152 19.0245 6.55267 18.9819 5.58341ZM17.3453 13.0035C17.3062 13.8911 17.1571 14.3704 17.0328 14.6899C16.7274 15.4816 16.0991 16.11 15.3073 16.4154C14.9878 16.5397 14.505 16.6887 13.6209 16.7277C12.6624 16.7704 12.3749 16.781 9.95 16.781C7.52513 16.781 7.23404 16.7704 6.27892 16.7277C5.39135 16.6887 4.91206 16.5397 4.59254 16.4154C4.19854 16.2698 3.83991 16.039 3.54881 15.7372C3.24704 15.4425 3.01627 15.0875 2.87065 14.6935C2.74639 14.374 2.59731 13.8911 2.55834 13.0071C2.51562 12.0485 2.50508 11.7609 2.50508 9.33604C2.50508 6.91117 2.51562 6.62007 2.55834 5.6651C2.59731 4.77753 2.74639 4.29824 2.87065 3.97871C3.01627 3.58458 3.24704 3.22608 3.55242 2.93485C3.84698 2.63307 4.20201 2.4023 4.59614 2.25682C4.91567 2.13256 5.39856 1.98348 6.28253 1.94437C7.24111 1.9018 7.52874 1.89112 9.95347 1.89112C12.3819 1.89112 12.6694 1.9018 13.6245 1.94437C14.5121 1.98348 14.9914 2.13256 15.3109 2.25682C15.7049 2.4023 16.0636 2.63307 16.3547 2.93485C16.6564 3.22955 16.8872 3.58458 17.0328 3.97871C17.1571 4.29824 17.3062 4.78099 17.3453 5.6651C17.3879 6.62368 17.3985 6.91117 17.3985 9.33604C17.3985 11.7609 17.3879 12.0449 17.3453 13.0035Z"
+                      fill="#F0F0F0" />
+                    <path
+                      d="M9.94646 4.66016C7.36903 4.66016 5.27783 6.75122 5.27783 9.32878C5.27783 11.9063 7.36903 13.9974 9.94646 13.9974C12.524 13.9974 14.6151 11.9063 14.6151 9.32878C14.6151 6.75122 12.524 4.66016 9.94646 4.66016ZM9.94646 12.3572C8.27436 12.3572 6.91804 11.001 6.91804 9.32878C6.91804 7.65654 8.27436 6.30036 9.94646 6.30036C11.6187 6.30036 12.9749 7.65654 12.9749 9.32878C12.9749 11.001 11.6187 12.3572 9.94646 12.3572Z"
+                      fill="#F0F0F0" />
+                    <path
+                      d="M15.8897 4.47565C15.8897 5.07754 15.4016 5.56556 14.7996 5.56556C14.1977 5.56556 13.7097 5.07754 13.7097 4.47565C13.7097 3.87363 14.1977 3.38574 14.7996 3.38574C15.4016 3.38574 15.8897 3.87363 15.8897 4.47565Z"
+                      fill="#F0F0F0" />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_13092_200">
+                      <rect width="18.1739" height="18.1739" fill="white" transform="translate(0.825928 0.240234)" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+            </div>
+          </div>
+    
+          <!-- Bottom Row with Copyright and Links -->
+          <div
+            class="flex flex-col md:flex-row justify-between items-center md:items-end w-full py-[24px] gap-[16px] md:gap-0">
+            <!-- Copyright Notice -->
+            <p class="text-[14px] md:text-[16px] leading-[21px] md:leading-[24px] text-[#B8B8B8]">
+              &copy; 2024 Company name. All rights reserved.
+            </p>
+    
+            <!-- Links -->
+            <div class="flex flex-col md:flex-row gap-[16px] md:gap-[40px]">
+              <a href="#" class="text-[14px] md:text-[16px] leading-[21px] md:leading-[24px] text-[#B8B8B8]">Privacy
+                Policy</a>
+              <a href="#" class="text-[14px] md:text-[16px] leading-[21px] md:leading-[24px] text-[#B8B8B8]">Terms
+                and Conditions</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </body>
+    
+    </html>
